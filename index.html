@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>E-Learning</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <style>
+        body {
+            background-image: url('login.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: Lato;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <h2 href="#home">E-Learning</h2>
+    </div>
+
+    <div class="isi">
+        <div class="head-c">
+            <br>
+            <br>
+            <h1>Login</h1>
+        </div>
+        <div class="daftar">
+            <form id="daftar">
+                <div id="login"></div>
+                <input id="text1" type="text" placeholder="Username" required>
+                <input id="text2" type="password" placeholder="Password" required>
+
+                <div class="syarat">
+                    <button type="submit" class="submit" onclick="login()"><a href="#">Login</a></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        function login(){
+            var x, y, text;
+        x = document.getElementById("text1").value;
+        y = document.getElementById("text2").value;
+        if (x === "ilham" && y === "12345") {
+            window.location.href = "dashbor.html";
+        } else {
+            text = "Username/Password Tidak Sesuai";
+            document.getElementById("login").innerHTML= text;
+        }
+        }
+
+    </script>
+</body>
+
+</html>
