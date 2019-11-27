@@ -6,9 +6,9 @@
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
 	width: 100%; /* Full width */
-	
+
   }
-  
+
   /* Links inside the navbar */
   .navbar h2 {
 	float: left;
@@ -29,7 +29,7 @@
 	margin-right: 20px;
 	margin-top: 30px;
   }
-  
+
   /* Change background on mouse-over */
   .navbar a:hover {
 	background: #ddd;
@@ -97,7 +97,7 @@
 .right-fb{
 	width: 40%;
 	display: inline-block;
-	
+
 }
 #daftar{
 	display: inline-block;
@@ -194,3 +194,12 @@ margin-left: 40px;
 #daftar{
 	margin-top: 160px;
 }
+
+
+		body {
+				background-image: url('login.png');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+				font-family: Lato;
+		}
