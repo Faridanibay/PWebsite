@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-Learning-Tugas</title>
+    <link rel="stylesheet" type="text/css" href="tugasguru.css">
+</head>
+
+<body>
+<ul>
+    <li role="presentation"><a href="Dashbor.html">Dashbor</a></li>
+    <li role="presentation"><a href="jadwalMengajar.html">Jadwal Mengajar</a></li>
+    <li class="active" role="presentation"><a href="tugasGuru.html">Tugas</a></li>
+    <li role="presentation"><a href="Materi.html">Materi</a></li>
+    <li role="presentation"><a href="datadiriguru.html">Data diri</a></li>
+    <li role="presentation"><a href=start.html>Keluar</a></li>
+</ul>
+
+
+    <div class="jumbotron">
+        <h1> <strong> <i> Tugas </i> </strong></h1>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <table style="width:70%;margin: auto;">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                </tr>
+            </table>
+            <div class="konten">
+                <br>
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <div class="form2">
+                            <p>Judul Tugas</p>
+                            <input type="text" placeholder="Judul Tugas"" required></input>
+                            <p>Pengumpulan Dibuka</p>
+                            <input type="date" placeholder="Pengumpulan dibuka"" required></input> <input type="time"
+                                placeholder="Pengumpulan dibuka"" required></input>
+                            <p>Pengumpulan terakhir</p>
+                            <input type="date" placeholder="Pengumpulan dibuka"" required></input> <input type="time"
+                                placeholder="Pengumpulan terakhir"" required></input>
+                            <p>Keterangan</p>
+                            <input type="text" class="ket" name="message" style="width:700px; height:150px;" required></input>
+                            <br>
+
+                        </div>
+                        <br>
+                        <div class="form2">
+                            Unggah dokumen: <br> <br> <input type="file" id="myFile" multiple size="50"
+                                onchange="myFunction()">
+                            <p id="hasil"></p><br><br><br>
+                            <div class="form2 btn">
+                                <button type="submit" style="float: right;">Submit</button>
+                            </div> <br><br><br>
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myFile");
+                        var txt = "";
+                        if ('files' in x) {
+                            if (x.files.length == 0) {
+                                txt = "Select one or more files.";
+                            } else {
+                                for (var i = 0; i < x.files.length; i++) {
+                                    var file = x.files[i];
+                                    var output = file.name.split('.');
+                                    if (output[1] === "pdf") {
+                                        txt += '<img src="pdf.jpg" alt="Smiley face" height="42" width="42"><br>';
+                                    } else if (output[1] === "docx" || output[1] === "doc") {
+                                        txt += '<img src="doc.png" alt="Smiley face" height="42" width="42"><br>';
+                                    } else if (output[1] === "css") {
+                                        txt += '<img src="css.png" alt="Smiley face" height="42" width="42"><br>';
+                                    } else if (output[1] === "html") {
+                                        txt += '<img src="html.png" alt="Smiley face" height="42" width="42"><br>';
+                                    }
+                                    if ('name' in file) {
+                                        txt += file.name + "<br>";
+                                    }
+                                    if ('size' in file) {
+                                        txt += file.size + " bytes <br>";
+                                    }
+                                }
+                            }
+                        } else {
+                            if (x.value == "") {
+                                txt += "Select one or more files.";
+                            } else {
+                                txt += "The files property is not supported by your browser!";
+                                txt += "<br>The path of the selected file: " + x.value;
+                            }
+                        }
+                        document.getElementById("hasil").innerHTML = txt;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3>E-Learning <br> SMAN 1 Rogojampi</h3>
+            <p class="footer-company-name"> &copy; 2019</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>Jalan Gurit Rogojampi, 72 <br> Banyuwangi, Indonesia</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>Telp: (0333)687689</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="sman1rogojampi@gmail.com">sman1rogojampi@gmail.com</a></p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
