@@ -3,8 +3,73 @@
 <head>
     <title>E-Learning</title>
     <link rel="stylesheet" type="text/css" href="form.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
+        .modal-zoom {
+            animation: animatezoom 0.6s
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        #modal-btn-yes {
+            padding: 15px;
+            background-color: #42A5F5;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #modal-btn-no {
+            padding: 15px;
+            background-color: #dc3545;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 
 <body>
     <div class="navbar">
@@ -29,20 +94,48 @@
 
             </form>
         </div>
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text">Login berhasil selamat datang</p>
+            </div>
+
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
-        function login(){
+        function login() {
             var x, y, text;
-        x = document.getElementById("text1").value;
-        y = document.getElementById("text2").value;
-        if (x === "ilham" && y === "12345") {
-            window.location.href = "dashbor.html";
-        } else {
-            text = "Username/Password Tidak Sesuai";
-            document.getElementById("login").innerHTML= text;
-        }
+            x = document.getElementById("text1").value;
+            y = document.getElementById("text2").value;
+            if (x === "ilham" && y === "12345") {
+                modal(true);
+            } else {
+                modal(false);
+            }
         }
 
+        function modal(status) {
+            var modal = document.getElementById("myModal");
+            var span = document.getElementsByClassName("close")[0];
+            if (status == true) {
+                $("#modal-text").text("Login berhasil");
+                modal.style.display = "block";
+                span.onclick = function () {
+                    modal.style.display = "none";
+                    window.location.href = 'dashbor.html';
+                    return false;
+                }
+            } else {
+                $("#modal-text").text("Username / password salah");
+                modal.style.display = "block";
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+        }
     </script>
 </body>
 
