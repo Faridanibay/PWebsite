@@ -16,6 +16,15 @@ body {
     height: 330px;
   }
 
+  .btn-load{
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    background-color: #1d5f74;
+    margin-top: 30px;
+  }
+
   .jumbotron h1 {
     position: relative;
     top: 90px;
