@@ -105,6 +105,17 @@
         </div>
       </div>
 <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+$(".btn-load").click(function () {
+      $.getJSON('https://raw.githubusercontent.com/Faridanibay/PWebsite-TM/master/data/kelas.json', function (data) {
+          console.log( data );
+          $.each(data, function (n, elem) {
+              $('.data-kelas').append(`<button class="tombol-pelajaran1" name="button">`+elem['kelas']+`</button><br>
+               `);
+          });
+      });
+  });
+</script>
     </footer>
   </body>
 
