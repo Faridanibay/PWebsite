@@ -44,6 +44,7 @@ li a {
   display: block;
   color: white;
   text-align: right;
+  margin-left: -3px;
   padding: 14px 16px;
   text-decoration: none;
 }
