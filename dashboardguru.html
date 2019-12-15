@@ -28,12 +28,6 @@
           <div class="data-kelas">
             <button class="tombol-pelajaran1" name="button">X MIA 1</button><br>
             <button class="tombol-pelajaran2" name="button">X MIA 2</button><br>
-            <button class="tombol-pelajaran3" name="button">XI MIA 3</button><br>
-            <button class="tombol-pelajaran4" name="button">XI MIA 4</button><br>
-            <button class="tombol-pelajaran5" name="button">XII MIA 1</button><br>
-            <button class="tombol-pelajaran6" name="button">XII MIA 2</button><br>
-            <button class="tombol-pelajaran7" name="button">XII MIA 3</button><br>
-            <button class="tombol-pelajaran8" name="button">XII MIA 4</button><br><br>
           </div>
 
           <a href="#!" class="btn-load">load data</a>
@@ -107,6 +101,7 @@
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript">
 $(".btn-load").click(function () {
+  console.log('masuk gan');
       $.getJSON('https://raw.githubusercontent.com/Faridanibay/PWebsite-TM/master/data/kelas.json', function (data) {
           console.log( data );
           $.each(data, function (n, elem) {
